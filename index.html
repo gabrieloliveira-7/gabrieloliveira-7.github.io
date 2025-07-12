@@ -1,111 +1,246 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gabriel Oliveira — Portfólio</title>
-<style>
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f5f7fa;
-    color: #333;
-}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfólio - Gabriel Almeida Oliveira</title>
+  <style>
+    :root {
+      --primary: #6a0dad; /* Roxo */
+      --dark: #111;        /* Preto */
+      --text: #e0e0e0;
+      --card-bg: #1e1e1e;
+      --gray: #2c2c2c;
+    }
 
-.header {
-    background-color: #4a90e2;
-    color: white;
-    text-align: center;
-    padding: 30px 20px;
-}
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: var(--dark);
+      color: var(--text);
+    }
 
-.header img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    border: 4px solid #fff;
-    margin-top: 15px;
-}
+    .container {
+      max-width: 900px;
+      margin: 20px auto;
+      background: var(--card-bg);
+      border-radius: 10px;
+      box-shadow: 0 0 10px #000;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
 
-.container {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 0 20px;
-}
+    .sidebar {
+      background: var(--dark);
+      width: 100%;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
-.section {
-    background-color: white;
-    margin: 20px 0;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
+    .portfolio-header {
+      width: 100%;
+      background: var(--primary);
+      padding: 30px 0 20px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
-.section h2 {
-    color: #4a90e2;
-    margin-top: 0;
-}
+    .portfolio-title {
+      font-size: 1.8em;
+      font-weight: bold;
+      color: white;
+      letter-spacing: 2px;
+    }
 
-.social {
-    text-align: center;
-    margin-top: 20px;
-}
+    .profile-img {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      border: 4px solid #fff;
+      object-fit: cover;
+      margin-top: 10px;
+      box-shadow: 0 0 10px #000;
+    }
 
-.social a {
-    margin: 0 10px;
-    text-decoration: none;
-    color: #4a90e2;
-    font-weight: bold;
-}
+    .name, .section-title {
+      text-align: center;
+      margin-top: 20px;
+      font-weight: bold;
+      color: var(--primary);
+    }
 
-footer {
-    text-align: center;
-    padding: 10px;
-    font-size: 0.9em;
-    color: #999;
-}
-</style>
+    .section-title {
+      margin-bottom: 10px;
+    }
+
+    .contact, .about, .achievements {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .main {
+      padding: 30px;
+      background-color: var(--gray);
+    }
+
+    .main h2 {
+      border-bottom: 1px solid #444;
+      padding-bottom: 5px;
+      color: var(--primary);
+    }
+
+    .info-block {
+      margin-bottom: 25px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    /* Responsivo */
+    @media (min-width: 700px) {
+      .container {
+        flex-direction: row;
+      }
+      .sidebar {
+        width: 300px;
+        padding: 0;
+      }
+      .main {
+        flex: 1;
+        padding: 40px;
+      }
+    }
+
+    /* Seção de projetos */
+    .projects-section {
+      background: #0d0d0d;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .projects-section h2 {
+      color: var(--primary);
+      margin-bottom: 30px;
+    }
+
+    .project-card {
+      background: #1e1e1e;
+      margin: 15px auto;
+      padding: 20px;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 600px;
+      box-shadow: 0 0 10px #000;
+    }
+
+    .project-card h3 {
+      margin: 0 0 10px;
+      color: #fff;
+    }
+
+    .project-card p {
+      color: #ccc;
+      font-size: 0.95em;
+    }
+  </style>
 </head>
 <body>
-
-<div class="header">
-    <h1>Gabriel Almeida Oliveira</h1>
-    <p>Desenvolvedor | Estudante de Tecnologia</p>
-    <!-- FOTO DE PERFIL -->
-    <img src="" alt="Minha foto">
-</div>
-
-<div class="container">
-    <div class="section">
-        <h2>Sobre mim</h2>
-        <p>
-            Olá! Eu sou o Gabriel, tenho 25 anos. Atualmente, estou cursando Informática para Internet pelo SENAI Dr. Celso Charuri, localizado na cidade de Pará de Minas - MG. 
-            Gosto de aprender novas ferramentas e criar soluções criativas para resolver problemas.
-            Espero futuramente poder atuar no ramo da tecnologia, uma área na qual cresce cada dia mais e se desenvolve.
-        </p>
+  <div class="container">
+    <!-- Sidebar esquerda -->
+    <div class="sidebar">
+      <div class="portfolio-header">
+        <span class="portfolio-title">Meu Portfólio</span>
+        <img src="coloque-o-link-da-sua-foto-aqui.jpg" alt="Foto de perfil" class="profile-img">
+      </div>
+      <div class="name">GABRIEL ALMEIDA OLIVEIRA</div>
+      <div class="section-title">QUEM SOU EU</div>
+      <div class="about">
+        Operador de produção em micro com 25 anos, de Pará de Minas. Experiência em gestão de demanda, tomada de decisões, trabalho em equipe e busca por otimização de processos.
+      </div>
+      <div class="section-title">REALIZAÇÕES</div>
+      <div class="achievements">
+        <ul>
+          <li>Destaque do mês (Itambé)</li>
+          <li>Plataforma nota 10 - 1º lugar</li>
+          <li>Mudanças em rotas de automação</li>
+          <li>Inspeções NR-33</li>
+          <li>Workshops</li>
+          <li>Permissão para dirigir (A e B)</li>
+        </ul>
+      </div>
+      <div class="section-title">CONTATO</div>
+      <div class="contact">
+        Celular: (37) 99842-7573 <br>
+        Email: gabriel.oliveira.21@hotmail.com
+      </div>
     </div>
 
-    <div class="section">
-        <h2>Projetos</h2>
-        <p>
-            Aqui você poderá encontrar alguns dos meus projetos pessoais e profissionais.
-            Em breve colocarei mais informações e links para eles!
-        </p>
+    <!-- Conteúdo principal -->
+    <div class="main">
+      <div class="info-block">
+        <strong>Ocupação atual:</strong> Itambé Lactalis - 3 anos
+      </div>
+      <div class="info-block">
+        <h2>EXPERIÊNCIA PROFISSIONAL</h2>
+        <strong>Itambé Lactalis</strong><br>
+        Cargo: Operador de micro (sala de comando)<br>
+        Função: Monitoramento e controle de processos e equipamentos.<br><br>
+        <strong>Serralheria Zincal LTDA</strong><br>
+        Cargo: Pintor e Solda<br>
+        Função: Pintura, lixamento e montagem com solda de estruturas metálicas.
+      </div>
+      <div class="info-block">
+        <h2>CONHECIMENTOS</h2>
+        <ul>
+          <li>Windows, Internet, Digitação: Ótimos</li>
+          <li>Word, Excel, PowerPoint: Médios</li>
+          <li>Inglês: Básico</li>
+        </ul>
+      </div>
+      <div class="info-block">
+        <h2>HABILITAÇÕES</h2>
+        NR-33, NR-35, 5S
+      </div>
+      <div class="info-block">
+        <h2>FORMAÇÃO</h2>
+        Senai - Técnico para Internet (Pará de Minas)<br>
+        Presencial | Noturno | Formatura: 07/2025
+      </div>
+      <div class="info-block">
+        <h2>INTERESSES</h2>
+        <ul>
+          <li>Iniciar faculdade após o técnico</li>
+          <li>Ampliar conhecimentos em TI</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Meus Projetos -->
+  <section class="projects-section">
+    <h2>MEUS PROJETOS</h2>
+
+    <div class="project-card">
+      <h3>Projeto 1 - Sistema de Controle de Produção</h3>
+      <p>Um sistema web simples feito em HTML, CSS e JavaScript que simula controle de etapas de produção. Idealizado com base na minha experiência na Itambé.</p>
     </div>
 
-    <div class="section">
-        <h2>Contato</h2>
-        <div class="social">
-            <a href="https://github.com/gabrieloliveira-7" target="_blank">GitHub</a> |
-            <a href="mailto:0001073144@senaimgaluno.com.br">E-mail</a> |
-            <a href="https://instagram.com/@gabriell_oliveira7" target="_blank">Instagram</a>
-        </div>
+    <div class="project-card">
+      <h3>Projeto 2 - Página Responsiva de Currículo</h3>
+      <p>Currículo online com visual limpo, responsivo e ideal para apresentar em entrevistas. Você está visualizando este agora!</p>
     </div>
-</div>
 
-<footer>
-    &copy; 2025 Gabriel Oliveira — Todos os direitos reservados
-</footer>
-
+    <div class="project-card">
+      <h3>Projeto 3 - Portfólio Interativo</h3>
+      <p>Portfólio em desenvolvimento com HTML e CSS moderno, integrando GitHub Pages para publicação.</p>
+    </div>
+  </section>
 </body>
 </html>
+
